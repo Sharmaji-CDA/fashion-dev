@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from './Users/users.module';
 import { UsersnpmService } from './install/usersnpm/usersnpm.service';
+import { OtpModule } from './User_otp/otps.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { UsersnpmService } from './install/usersnpm/usersnpm.service';
       synchronize: false, // Auto-create tables (disable in production)
     }),
     UsersModule,
+    OtpModule
   ],
   controllers: [AppController],
   providers: [AppService, UsersnpmService],
